@@ -1,0 +1,15 @@
+.message{
+    width: inherit;
+    padding: 1.5em;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+.error{
+   background-color: rgb(252, 80, 80);
+    color: rgb(172, 2, 2);
+}
+.success{
+    
+    background-color: rgb(93, 201, 93);
+    color: darkgreen;
+}

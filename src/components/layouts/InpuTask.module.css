@@ -1,0 +1,29 @@
+.input_container{
+    margin-top: 50px;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    max-height: 50px;
+    justify-content: space-between;
+}
+.input_container input{
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+    border: none;
+}
+.input_container input::placeholder{
+    color: gray;
+}
+.input_container button{
+    padding: 10px;
+    margin-left: 20px;
+    border: 1px solid #222;
+    transition: .5s;
+}
+.input_container button:hover{
+    background-color: black;
+    color: white;
+}
+

@@ -1,0 +1,66 @@
+.tasks{
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    margin-top: 10px;
+    width: 70%;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.tasks input{
+    padding: 4.5px;
+}
+.tasks .done{
+    background-color: white;
+    text-decoration: line-through;
+}
+.tasks span div button{
+    border: 1px solid black;
+    padding: 5px;
+    margin-right: 5px;
+    transition: .5s;
+}
+
+.tasks span div button:hover{
+    border: 1px solid white;
+    color: white;
+    background-color: #222;
+
+}
+
+.taskDone{
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    margin-top: 10px;
+    width: 70%;
+    background-color:white;
+    color: #222;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: line-through;
+}
+.taskDone input{
+    padding: 4.5px;
+}
+.taskDone .done{
+    background-color: white;
+    text-decoration: line-through;
+}
+.taskDone span div button{
+    border: 1px solid black;
+    padding: 5px;
+    margin-right: 5px;
+    transition: .5s;
+}
+
+.taskDone span div button:hover{
+    border: 1px solid white;
+    color: white;
+    background-color: #222;
+
+}

@@ -1,0 +1,29 @@
+.aside_container{
+    float: left;
+    padding: 15px;
+    padding-top: 25px;
+    position: fixed;
+    max-width: 25%;
+    background-color: #222;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    font-size: 30px;
+}
+.aside_container .block_space{
+    height: 90%;
+}
+.aside_container div button{
+    border: 1px solid white;
+    background-color: #222;
+    color: white;
+    padding: .7em 1.2em;
+    cursor: pointer;
+    transition: .5s;
+}
+.aside_container div button:hover{
+    background-color: white;
+    color: black;
+}

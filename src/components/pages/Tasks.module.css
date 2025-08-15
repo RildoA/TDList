@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 60%;
+
+}
+.container form{
+    width: 100%;
+}
+.container div{
+    width: 100%;
+}
