@@ -10,10 +10,11 @@ require('./model/User');
 const User = mongoose.model("users");
 require('./config/auth')(passport)
 const logged = require('./helpers/logged');
+const db = require('./config/db.js')
 
 //Configurações
     mongoose.Promise = global.Promise;
-    mongoose.connect("mongodb://localhost/TDList")
+    mongoose.connect(db.mongoURI)
     .then(()=>console.log("MongoDB connected successfully"))
     .catch(error=>console.log("Error connecting MongoDB: "+error))
 
@@ -40,6 +41,12 @@ const logged = require('./helpers/logged');
         credentials: true
 
     }))
+
+    app.use(express.static(path.join(__dirname, "../build")));
+
+    app.get("*",(req,res)=>{
+        res.sendFile(path.join(__dirname,"../build", "index.html"))
+    })
     
 
 //Rotas
@@ -155,7 +162,7 @@ const logged = require('./helpers/logged');
 
 
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
-app.listen(port,()=>console.log("Servidor a rodar"));
+app.listen(port,()=>console.log("Servidor a rodar "));
 
