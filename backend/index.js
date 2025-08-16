@@ -34,7 +34,7 @@ const MongoStore = require('connect-mongo')
     app.use(passport.initialize());
     app.use(passport.session());
 
-    app.use(express.json())
+    
 
     app.use(cors({
         origin: ["https://tdllist.vercel.app", "http://localhost:3000"], //Onde está o frontend
@@ -42,7 +42,9 @@ const MongoStore = require('connect-mongo')
 
     }))
 
+    app.options("*",cors());
 
+    app.use(express.json())
     
     
 
