@@ -11,6 +11,7 @@ const User = mongoose.model("users");
 require('./config/auth')(passport)
 const logged = require('./helpers/logged');
 const db = require('./config/db.js')
+const MongoStore = require('connect-mongo')
 
 //Configurações
     mongoose.Promise = global.Promise;
@@ -19,9 +20,10 @@ const db = require('./config/db.js')
     .catch(error=>console.log("Error connecting MongoDB: "+error))
 
     app.use(session({
-        secret: "UmaPalavraSecretaQualquer",
+        secret: process.env.SESSION_SECRET,
         saveUninitialized: true,
         resave: true,
+        store: MongoStore.create({mongoUrl: process.env.MONGO_URI}),
         cookie:{
             secure: false,
             sameSite: "lax",
@@ -33,8 +35,6 @@ const db = require('./config/db.js')
     app.use(passport.session());
 
     app.use(express.json())
-
-    app.use(express.static(path.join(__dirname,"../src/components")))
 
     app.use(cors({
         origin: "http://localhost:3000", //Onde está o frontend
