@@ -25,7 +25,7 @@ const MongoStore = require('connect-mongo')
         resave: true,
         store: MongoStore.create({mongoUrl: process.env.MONGO_URI}),
         cookie:{
-            secure: true,
+            secure: process.env.NODE_ENV === "production",
             sameSite: "none"
         }
     }))
