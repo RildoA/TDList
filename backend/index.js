@@ -42,7 +42,6 @@ const MongoStore = require('connect-mongo')
 
     }))
 
-    app.options("*",cors());
 
     app.use(express.json())
     
