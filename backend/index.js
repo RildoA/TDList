@@ -42,7 +42,6 @@ const MongoStore = require('connect-mongo')
 
     }))
 
-    app.use(express.static(path.join(__dirname, "../build")));
 
     
     
@@ -159,11 +158,6 @@ const MongoStore = require('connect-mongo')
         })
 
 
-    //ROTA CURINGA (CATCH-ALL PARA REACT)
-
-        app.get("*",(req,res)=>{
-            res.sendFile(path.join(__dirname,"../build", "index.html"))
-        })
 
 const port = process.env.PORT || 8080;
 
