@@ -37,7 +37,7 @@ const MongoStore = require('connect-mongo')
     app.use(express.json())
 
     app.use(cors({
-        origin: "http://localhost:3000", //Onde está o frontend
+        origin: "https://tdllist.vercel.app/" || "http://localhost:3000", //Onde está o frontend
         credentials: true
 
     }))
