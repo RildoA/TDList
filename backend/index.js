@@ -20,7 +20,7 @@ const MongoStore = require('connect-mongo')
     .catch(error=>console.log("Error connecting MongoDB: "+error))
 
     app.use(session({
-        secret: process.env.SESSION_SECRET,
+        secret: process.env.SESSION_SECRET || "UmaPalavraSecretaQualquer",
         saveUninitialized: true,
         resave: true,
         store: MongoStore.create({mongoUrl: process.env.MONGO_URI}),
@@ -44,7 +44,7 @@ const MongoStore = require('connect-mongo')
 
     app.use(express.static(path.join(__dirname, "../build")));
 
-    app.get("/*",(req,res)=>{
+    app.get("*",(req,res)=>{
         res.sendFile(path.join(__dirname,"../build", "index.html"))
     })
     
