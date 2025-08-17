@@ -21,10 +21,11 @@ const MongoStore = require('connect-mongo')
 
     app.use(session({
         secret: process.env.SESSION_SECRET || "UmaPalavraSecretaQualquer",
-        saveUninitialized: true,
-        resave: true,
+        saveUninitialized: false,
+        resave: false,
         store: MongoStore.create({mongoUrl: process.env.MONGO_URI}),
         cookie:{
+            httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "none"
         }
